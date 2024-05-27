@@ -1,12 +1,16 @@
 import className from 'classnames';
 
 type IButtonProps = {
-  children: React.ReactNode;
+  xl?: boolean;
+  children: string;
 };
 
 const Button = (props: IButtonProps) => {
   const btnClass = className({
-    'inline-flex items-center space-x-2 bg-primary-500 text-white px-4 py-2 rounded-xl hover:bg-primary-600': true,
+    btn: true,
+    'btn-xl': props.xl,
+    'btn-base': !props.xl,
+    'btn-primary': true,
   });
 
   return (
@@ -15,9 +19,24 @@ const Button = (props: IButtonProps) => {
 
       <style jsx>
         {`
-          /* Define styles inline since tailwind does not support @apply in JSX */
-          div {
-            @apply cursor-pointer;
+          .btn {
+            @apply inline-block rounded-md text-center;
+          }
+
+          .btn-base {
+            @apply text-lg font-semibold py-2 px-4;
+          }
+
+          .btn-xl {
+            @apply font-extrabold text-xl py-4 px-6;
+          }
+
+          .btn-primary {
+            @apply text-white bg-primary-500;
+          }
+
+          .btn-primary:hover {
+            @apply bg-primary-600;
           }
         `}
       </style>

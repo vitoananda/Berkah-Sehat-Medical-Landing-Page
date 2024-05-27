@@ -1,14 +1,5 @@
-import Layout from '../components/Layout';
-import { Slider } from '../templates/Slider';
-import { Category } from '../templates/Categories';
-import { FAQ } from '../templates/Faq';
+import { Base } from '../templates/Base';
 
-const Index = () => (
-  <Layout>
-    <Slider />
-    <Category />
-    <FAQ />
-  </Layout>
-);
+const Index = () => <Base />;
 
 export default Index;
