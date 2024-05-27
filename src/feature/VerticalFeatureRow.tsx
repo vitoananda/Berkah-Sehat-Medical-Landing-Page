@@ -1,37 +1,56 @@
-import className from 'classnames';
-import { useRouter } from 'next/router';
+import React from "react";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
+import "react-accessible-accordion/dist/fancy-example.css";
+
+type FAQ = {
+  type: string;
+  description: string;
+};
+
+type AccordionProps = {
+  descriptions: FAQ[];
+};
+
+const CustomAccordion = ({ descriptions }: AccordionProps) => {
+  return (
+    <Accordion className="custom-accordion">
+      {descriptions.map((faq, index) => (
+        <AccordionItem key={index}>
+          <AccordionItemButton>{faq.type}</AccordionItemButton>
+          <AccordionItemPanel>{faq.description}</AccordionItemPanel>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  );
+};
 
 type IVerticalFeatureRowProps = {
-  title: string;
-  description: string;
+  descriptions: FAQ[];
   image: string;
   imageAlt: string;
-  reverse?: boolean;
 };
 
 const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
-  const verticalFeatureClass = className(
-    'mt-20',
-    'flex',
-    'flex-wrap',
-    'items-center',
-    {
-      'flex-row-reverse': props.reverse,
-    },
-  );
-
-  const router = useRouter();
+  const { descriptions, image, imageAlt } = props;
 
   return (
-    <div className={verticalFeatureClass}>
-      <div className="w-full text-center sm:w-1/2 sm:px-6">
-        <h3 className="text-3xl font-semibold text-gray-900">{props.title}</h3>
-        <div className="mt-6 text-xl leading-9">{props.description}</div>
+    <div className="mt-12 flex flex-col items-center sm:flex-row">
+      <div className="w-42 sm:w-1/2 mx-2">
+        <img src={image} alt={imageAlt} className="hidden sm:block" />
       </div>
-
-      <div className="w-full p-6 sm:w-1/2">
-        <img src={`${router.basePath}${props.image}`} alt={props.imageAlt} />
+      <div className="w-full sm:w-1/2 sm:px-6 flex-grow">
+        <CustomAccordion descriptions={descriptions} />
       </div>
+      <style jsx>{`
+        .custom-accordion {
+          width: 100%; 
+        }
+      `}</style>
     </div>
   );
 };

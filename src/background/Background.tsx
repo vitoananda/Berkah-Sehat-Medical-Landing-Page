@@ -1,12 +1,12 @@
-import type { ReactNode } from 'react';
+import React, { CSSProperties, ReactNode } from "react";
 
-type IBackgroundProps = {
+interface IBackgroundProps {
   children: ReactNode;
   color: string;
-};
-
+  style?: CSSProperties; 
+}
 const Background = (props: IBackgroundProps) => (
-  <div className={props.color}>{props.children}</div>
+  <div style={{ backgroundColor: props.color }}>{props.children}</div>
 );
 
 export { Background };
