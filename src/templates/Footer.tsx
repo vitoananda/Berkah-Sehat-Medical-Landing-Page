@@ -4,11 +4,17 @@ import { FaInstagram } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 const Footer = ({ bottom = 0 }) => {
-  const [isWebViewport, setIsWebViewport] = useState(window.innerWidth > 768);
+  const [isWebViewport, setIsWebViewport] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
+    if (typeof window !== "undefined") {
       setIsWebViewport(window.innerWidth > 768);
+    }
+
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setIsWebViewport(window.innerWidth > 768);
+      }
     };
 
     window.addEventListener("resize", handleResize);
