@@ -138,7 +138,7 @@ const products: Product[] = [
     title: "Suction Pump",
     description:
       "Berfungsi untuk menyedot cairan yang biasa keluar dari bagian tubuh ketika tindakan atau operasil. Menyediakan alat suction pump untuk kebutuhan darurat. Suction Pump ini digunakan untuk menyedot dahak atau lendir pada bagian mulut dan tengorokan secara otomatis.",
-    category: "Nebulizer",
+    category: "Suction",
     imageUrl: "/assets/images/produk/Suction.jpg",
   },
   {
@@ -186,14 +186,14 @@ const products: Product[] = [
     title: "Tongkat Kaki Empat",
     description:
       "adalah tongkat alat bantu jalan yang memiliki model 4 kaki, dengan tiang dan penyangga untuk ketiak. Ukuran tongkat ini tidak terlalu besar sehingga memudahkan pasien untuk membawa tongkat kaki empat ini untuk berpindah tempat",
-    category: "Tongkat Kaki",
+    category: "Tongkat",
     imageUrl: "/assets/images/produk/Tongkat Kaki 4.jpg",
   },
   {
     id: 23,
     title: "Tongkat Kaki Tiga",
     description: "-",
-    category: "Tongkat Kaki",
+    category: "Tongkat",
     imageUrl: "/assets/images/produk/Tongkat Kaki 3.jpg",
   },
   {
@@ -201,7 +201,7 @@ const products: Product[] = [
     title: "Tongkat Kruk",
     description:
       "Adalah tongkat alat bantu jalan yang memiliki model satu tiang pada kaki dan dua tiang pada area penyangga di ketiak serta pergelangan tangan. Selain itu tongkat kruk ini tersedia dengan 3 ukuran yaitu Small (S), Medium (M), Large (L) yang dapat disesuaikan dengan tinngi pasien yang akan menggunakan alat bantu tongakat kruk ini.",
-    category: "Tongkat Kruk",
+    category: "Tongkat",
     imageUrl: "/assets/images/produk/Tongkat Kruk.jpeg",
   },
   {

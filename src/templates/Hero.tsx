@@ -5,11 +5,19 @@ import { Button } from "../button/Button";
 import { Section } from "../layout/Section";
 import { NavbarTwoColumns } from "../navigation/NavbarTwoColumns";
 import { Logo } from "./Logo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const locations: string[] = [
   "Wahana Pondok Gede blok L1 nomor 12, Jatiranggon, Jatisampurna, Kota Bekasi, Jawa Barat 17432",
   "Jl. Anggrek nomor 10, Petukangan Utara RT06 RW05, Kec Pesanggrahan, Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
   "Jl. Hj. Saidi nomor 53, Grogol Selatan, Kec Kebayoran Lama, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12210",
+];
+
+const addressLink: string[] = [
+  "https://maps.app.goo.gl/VDzfB5xQdsGxd21n8",
+  "https://maps.app.goo.gl/c4h9kummcy2eh3PY7",
+  "https://maps.app.goo.gl/tyS8sCs34SGpC6Ds9",
 ];
 
 const Hero = () => {
@@ -103,13 +111,26 @@ const Hero = () => {
               onClick={handleCloseModal}
             ></button>
             <div className="text-center">
-              <h2 className="text-xl font-semibold mb-2">
+              <h2 className="text-xl font-semibold mb-2 text-[#295A8D]">
                 Lokasi Berkah Sehat Medical
               </h2>
               <ul>
                 {locations.map((location, index) => (
                   <li className="mb-4" key={index}>
                     {index + 1}. {location}
+                    <br />
+                    <a
+                      className="mt-5 text-black font-medium"
+                      href={addressLink[index]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      See on map{" "}
+                      <FontAwesomeIcon
+                        className="ml-1"
+                        icon={faArrowUpRightFromSquare}
+                      />
+                    </a>
                   </li>
                 ))}
               </ul>
