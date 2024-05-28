@@ -75,7 +75,7 @@ const Hero = () => {
           </li>
           <li>
             <a
-              href="https://wa.me/6288211163207"
+              href="https://wa.me/6288211163207?text=Selamat%20Pagi/Siang/Malam%20Berkah%20Sehat%20Medical.%20Saya%20tadi%20melihat%20website,%20ingin%20bertanya%20seputar%20produk%20untuk%20beli/sewa%20berupa%20alat%20:%0A%0ANama%20Barang%20:%0AKeluhan%20:%0ABerat%20badan%20:"
               target="_blank"
               rel="noopener noreferrer"
             >
