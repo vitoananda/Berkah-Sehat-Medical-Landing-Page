@@ -1,16 +1,21 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
 });
 
 module.exports = withBundleAnalyzer({
   eslint: {
-    dirs: ['.'],
+    dirs: ["."],
   },
   poweredByHeader: false,
   trailingSlash: true,
-  basePath: '',
+  basePath: "",
   reactStrictMode: true,
   images: {
-    domains: ['berkahsehatmedical.com'],
+    remotePatterns: [
+      {
+        hostname: "berkahsehatmedical.com",
+        pathname: "**",
+      },
+    ],
   },
 });

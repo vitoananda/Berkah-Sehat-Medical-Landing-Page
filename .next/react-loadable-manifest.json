@@ -10,5 +10,11 @@
     "files": [
       "static/chunks/node_modules_next_dist_pages__error_js.js"
     ]
+  },
+  "Products.tsx -> ../components/Modal": {
+    "id": "Products.tsx -> ../components/Modal",
+    "files": [
+      "static/chunks/src_components_Modal_tsx.js"
+    ]
   }
 }

@@ -1,12 +1,27 @@
 import Layout from "../components/Layout";
 import { Section } from "../layout/Section";
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import { products } from "@/data/productData";
 import { Product } from "@/types/type";
+import { products as productData } from "@/data/productData";
+import dynamic from "next/dynamic";
+import ProductCard from "../components/productCards";
 
-const Products = () => {
+const Modal = dynamic(() => import("../components/Modal"), { ssr: false });
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      products: productData,
+    },
+  };
+};
+
+interface ProductsProps {
+  products: Product[];
+}
+
+const Products: React.FC<ProductsProps> = ({ products }) => {
   const router = useRouter();
   const { category: queryCategory } = router.query;
 
@@ -30,7 +45,6 @@ const Products = () => {
     const productTitleWords = product.title.toLowerCase().split(" ");
     const searchTermWords = searchTerm.toLowerCase().split(" ");
 
-    // Check if any word in the product title matches any word in the search term
     const matchesSearchTerm = searchTermWords.every((word) =>
       productTitleWords.some((productWord) => productWord.includes(word))
     );
@@ -137,66 +151,21 @@ const Products = () => {
             </div>
           ) : (
             filteredProducts.map((product) => (
-              <div
+              <ProductCard
                 key={product.id}
-                className="bg-white rounded-lg overflow-hidden shadow-lg border-4 border-[#F6F7FC] p-2 transform transition duration-500 hover:scale-105 cursor-pointer"
-                onClick={() => handleClick(product)}
-              >
-                <div className="flex justify-center items-center w-full h-g4 shadow-md overflow-hidden rounded-md">
-                  <Image
-                    src={product.imageUrl}
-                    alt={product.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="px-6 py-4 text-center">
-                  <div className="font-semibold text-md mb-2 ">
-                    {product.title}
-                  </div>
-                </div>
-              </div>
+                product={product}
+                handleClick={handleClick}
+              />
             ))
           )}
         </div>
       </Section>
-      {/* Modal */}
       {showModal && selectedProduct && (
-        <div
-          className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-700 bg-opacity-50 z-50"
-          style={{ zIndex: 9999 }}
-        >
-          <div
-            ref={modalRef}
-            className="bg-white p-8 rounded-lg shadow-md max-h-[90vh] overflow-y-auto"
-            style={{ maxWidth: "60vw", width: "100%" }}
-          >
-            <button
-              className="absolute top-4 right-4"
-              onClick={handleCloseModal}
-            ></button>
-            <div className="flex flex-col sm:flex-row items-center justify-center">
-              <div className="w-full sm:w-1/2 pr-4">
-                <Image
-                  src={selectedProduct.imageUrl}
-                  alt={selectedProduct.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover mobileImage"
-                />
-              </div>
-              <div className="w-full sm:w-1/2 text-center mt-4 sm:mt-0">
-                <h2 className="text-xl font-semibold mb-2">
-                  {selectedProduct.title}
-                </h2>
-                <p className="mobileText text-justify text-sm">
-                  {selectedProduct.description}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Modal
+          product={selectedProduct}
+          handleCloseModal={handleCloseModal}
+          modalRef={modalRef}
+        />
       )}
     </Layout>
   );
