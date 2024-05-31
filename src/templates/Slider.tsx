@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { imgUrl } from "@/components/imgUrl";
 
 const Slider = ({ width = "100%" }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,14 +33,14 @@ const Slider = ({ width = "100%" }) => {
       >
         <div className="w-full">
           <img
-            src="/assets/images/slider/1.png"
+            src={`${imgUrl}/1.png`}
             alt="Slide 1"
             className="w-full h-full object-contain"
           />
         </div>
         <div className="w-full">
           <img
-            src="/assets/images/slider/2.png"
+            src={`${imgUrl}/2.png`}
             alt="Slide 2"
             className="w-full h-full object-contain"
           />

@@ -10,4 +10,7 @@ module.exports = withBundleAnalyzer({
   trailingSlash: true,
   basePath: '',
   reactStrictMode: true,
+  images: {
+    domains: ['berkahsehatmedical.com'],
+  },
 });

@@ -1,59 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/layout/Section";
 import Link from "next/link";
-
-const categories = [
-  {
-    id: 1,
-    title: "Bed Pasien",
-    imageUrl: "/assets/images/kategori/bed.png",
-  },
-  {
-    id: 2,
-    title: "Kursi Roda",
-    imageUrl: "/assets/images/kategori/kursi-roda.png",
-  },
-  {
-    id: 3,
-    title: "Meja Makan Pasien",
-    imageUrl: "/assets/images/kategori/meja-makan-pasien.png",
-  },
-  {
-    id: 4,
-    title: "Nebulizer",
-    imageUrl: "/assets/images/kategori/nebulizer.png",
-  },
-  {
-    id: 5,
-    title: "Suction",
-    imageUrl: "/assets/images/kategori/suction.png",
-  },
-  {
-    id: 6,
-    title: "Tabung Oksigen",
-    imageUrl: "/assets/images/kategori/tabung-oksigen.png",
-  },
-  {
-    id: 7,
-    title: "Tandu",
-    imageUrl: "/assets/images/kategori/tandu.png",
-  },
-  {
-    id: 8,
-    title: "Toilet Chair",
-    imageUrl: "/assets/images/kategori/toilet-chair.png",
-  },
-  {
-    id: 9,
-    title: "Tongkat",
-    imageUrl: "/assets/images/kategori/tongkat-kruk.png",
-  },
-  {
-    id: 10,
-    title: "Walker",
-    imageUrl: "/assets/images/kategori/walker.png",
-  },
-];
+import { categories } from "@/data/categoryData";
 
 const Category = () => (
   <Section title="Kategori Produk">
