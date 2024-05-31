@@ -1,23 +1,24 @@
-import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
-import { Background } from "../background/Background";
-import { Button } from "../button/Button";
-import { Section } from "../layout/Section";
-import { NavbarTwoColumns } from "../navigation/NavbarTwoColumns";
-import { Logo } from "./Logo";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+
+import { Background } from '../background/Background';
+import { Button } from '../button/Button';
+import { Section } from '../layout/Section';
+import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
+import { Logo } from './Logo';
 
 const locations: string[] = [
-  "Wahana Pondok Gede blok L1 nomor 12, Jatiranggon, Jatisampurna, Kota Bekasi, Jawa Barat 17432",
-  "Jl. Anggrek nomor 10, Petukangan Utara RT06 RW05, Kec Pesanggrahan, Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
-  "Jl. Hj. Saidi nomor 53, Grogol Selatan, Kec Kebayoran Lama, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12210",
+  'Wahana Pondok Gede blok L1 nomor 12, Jatiranggon, Jatisampurna, Kota Bekasi, Jawa Barat 17432',
+  'Jl. Anggrek nomor 10, Petukangan Utara RT06 RW05, Kec Pesanggrahan, Jakarta Selatan, Daerah Khusus Ibukota Jakarta',
+  'Jl. Hj. Saidi nomor 53, Grogol Selatan, Kec Kebayoran Lama, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12210',
 ];
 
 const addressLink: string[] = [
-  "https://maps.app.goo.gl/VDzfB5xQdsGxd21n8",
-  "https://maps.app.goo.gl/c4h9kummcy2eh3PY7",
-  "https://maps.app.goo.gl/tyS8sCs34SGpC6Ds9",
+  'https://maps.app.goo.gl/VDzfB5xQdsGxd21n8',
+  'https://maps.app.goo.gl/c4h9kummcy2eh3PY7',
+  'https://maps.app.goo.gl/tyS8sCs34SGpC6Ds9',
 ];
 
 const Hero = () => {
@@ -37,21 +38,21 @@ const Hero = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
+        modalRef.current
+        && !modalRef.current.contains(event.target as Node)
       ) {
         setShowModal(false);
       }
     };
 
     if (showModal) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [showModal]);
 
@@ -98,20 +99,20 @@ const Hero = () => {
       {/* Modal */}
       {showModal && (
         <div
-          className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-700 bg-opacity-50 z-50"
+          className="fixed left-0 top-0 z-50 flex size-full items-center justify-center bg-gray-700 bg-opacity-50"
           style={{ zIndex: 9999 }}
         >
           <div
             ref={modalRef}
-            className="bg-white p-8 rounded-lg shadow-md max-h-[90vh] overflow-y-auto"
-            style={{ maxWidth: "60vw", width: "100%" }}
+            className="max-h-[90vh] overflow-y-auto rounded-lg bg-white p-8 shadow-md"
+            style={{ maxWidth: '60vw', width: '100%' }}
           >
             <button
-              className="absolute top-4 right-4"
+              className="absolute right-4 top-4"
               onClick={handleCloseModal}
             ></button>
             <div className="text-center">
-              <h2 className="text-xl font-semibold mb-2 text-[#295A8D]">
+              <h2 className="mb-2 text-xl font-semibold text-[#295A8D]">
                 Lokasi Berkah Sehat Medical
               </h2>
               <ul>
@@ -120,12 +121,12 @@ const Hero = () => {
                     {index + 1}. {location}
                     <br />
                     <a
-                      className="mt-5 text-black font-medium"
+                      className="mt-5 font-medium text-black"
                       href={addressLink[index]}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      See on map{" "}
+                      See on map{' '}
                       <FontAwesomeIcon
                         className="ml-1"
                         icon={faArrowUpRightFromSquare}

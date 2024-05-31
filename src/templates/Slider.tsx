@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { imgUrl } from "@/components/imgUrl";
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-const Slider = ({ width = "100%" }) => {
+import { useEffect, useState } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+
+import { imgUrl } from '@/components/imgUrl';
+
+const Slider = ({ width = '100%' }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -12,14 +14,14 @@ const Slider = ({ width = "100%" }) => {
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  const sliderPadding = isMobile ? "pt-6" : "pt-6";
+  const sliderPadding = isMobile ? 'pt-6' : 'pt-6';
 
   return (
     <div className={`w-full ${sliderPadding}`} style={{ width }}>
@@ -35,14 +37,14 @@ const Slider = ({ width = "100%" }) => {
           <img
             src={`${imgUrl}/1.png`}
             alt="Slide 1"
-            className="w-full h-full object-contain"
+            className="size-full object-contain"
           />
         </div>
         <div className="w-full">
           <img
             src={`${imgUrl}/2.png`}
             alt="Slide 2"
-            className="w-full h-full object-contain"
+            className="size-full object-contain"
           />
         </div>
       </Carousel>

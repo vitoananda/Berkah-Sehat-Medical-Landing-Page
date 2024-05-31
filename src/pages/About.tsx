@@ -1,27 +1,27 @@
-import Layout from "../components/Layout";
-import { Section } from "../layout/Section";
+import Layout from '../components/Layout';
+import { Section } from '../layout/Section';
 
 const About = () => (
   <Layout>
     <Section yPadding="py-10" title="About Us">
-      <p className="mt-4 text-lg text-justify">
+      <p className="mt-4 text-justify text-lg">
         Berkah Sehat Medical merupakan penyedia sewa alat kesehatan atau pun
         dapat membeli unit baru, kami menyedikan berbagai alat kesehatan seperti
         ranjang rumah sakit, kursi roda, tabung oksigen, decubitus, suction, dan
         lainnya.
       </p>
-      <p className="mt-4 text-lg text-justify">
+      <p className="mt-4 text-justify text-lg">
         Berkah Sehat Medical juga sudah ada cabang di beberapa daerah yang
         tersebar Jakarta Pusat, Jakarta Selatan, Jakarta Barat, Jakarta Timur
         dan Bekasi
       </p>
-      <p className="mt-4 text-lg text-justify">
+      <p className="mt-4 text-justify text-lg">
         Silahkan informasikan dengan detail kebutuhan kesehatan Anda dan
         Keluarga kepada Kami karena kami akan memberikan solusi terbaik untuk
         kebutuhan penyewaan alat kesehatan dalam membantu penyembuhan anda
         ataupu keluarga
       </p>
-      <p className="mt-6 mb-4 text-lg font-semibold text-[#295A8D] text-left">
+      <p className="mb-4 mt-6 text-left text-lg font-semibold text-[#295A8D]">
         Vision
       </p>
       <ol className="list-decimal pl-5">
@@ -38,7 +38,7 @@ const About = () => (
           kemitraan.
         </li>
       </ol>
-      <p className="mt-6 mb-4 text-lg font-semibold text-[#295A8D] text-left">
+      <p className="mb-4 mt-6 text-left text-lg font-semibold text-[#295A8D]">
         Mission
       </p>
       <ol className="list-decimal pl-5">

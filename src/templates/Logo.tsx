@@ -1,7 +1,6 @@
-
 const Logo = () => {
-  const containerClassName = "flex justify-center items-center";
-  const imageClassName = "w-32 h-10 object-cover";
+  const containerClassName = 'flex justify-center items-center';
+  const imageClassName = 'w-32 h-10 object-cover';
 
   return (
     <div className={containerClassName}>

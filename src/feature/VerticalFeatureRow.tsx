@@ -1,11 +1,12 @@
-import React from "react";
+import 'react-accessible-accordion/dist/fancy-example.css';
+
+import React from 'react';
 import {
   Accordion,
   AccordionItem,
   AccordionItemButton,
   AccordionItemPanel,
-} from "react-accessible-accordion";
-import "react-accessible-accordion/dist/fancy-example.css";
+} from 'react-accessible-accordion';
 
 type FAQ = {
   type: string;
@@ -16,8 +17,7 @@ type AccordionProps = {
   descriptions: FAQ[];
 };
 
-const CustomAccordion = ({ descriptions }: AccordionProps) => {
-  return (
+const CustomAccordion = ({ descriptions }: AccordionProps) => (
     <Accordion className="custom-accordion">
       {descriptions.map((faq, index) => (
         <AccordionItem key={index}>
@@ -26,8 +26,7 @@ const CustomAccordion = ({ descriptions }: AccordionProps) => {
         </AccordionItem>
       ))}
     </Accordion>
-  );
-};
+);
 
 type IVerticalFeatureRowProps = {
   descriptions: FAQ[];
@@ -40,10 +39,10 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
 
   return (
     <div className="mt-12 flex flex-col items-center sm:flex-row">
-      <div className="w-42 sm:w-1/2 mx-2">
+      <div className="w-42 mx-2 sm:w-1/2">
         <img src={image} alt={imageAlt} className="hidden sm:block" />
       </div>
-      <div className="w-full sm:w-1/2 sm:px-6 flex-grow">
+      <div className="w-full grow sm:w-1/2 sm:px-6">
         <CustomAccordion descriptions={descriptions} />
       </div>
       <style jsx>{`

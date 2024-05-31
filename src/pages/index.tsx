@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
-import { Slider } from '../templates/Slider';
 import { Category } from '../templates/Categories';
 import { FAQ } from '../templates/Faq';
+import { Slider } from '../templates/Slider';
 
 const Index = () => (
   <Layout>

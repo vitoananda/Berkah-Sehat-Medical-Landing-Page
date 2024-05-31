@@ -1,8 +1,7 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
-import { NextSeo } from "next-seo";
+import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
-import { AppConfig } from "../utils/AppConfig";
+import { AppConfig } from '../utils/AppConfig';
 
 type IMetaProps = {
   title: string;
@@ -10,10 +9,7 @@ type IMetaProps = {
   canonical?: string;
 };
 
-const Meta = (props: IMetaProps) => {
-  const router = useRouter();
-
-  return (
+const Meta = (props: IMetaProps) => (
     <>
       <Head>
         <meta charSet="UTF-8" key="charset" />
@@ -24,7 +20,7 @@ const Meta = (props: IMetaProps) => {
         />
         <link
           rel="icon"
-          href={`/assets/images/logo/Berkah Sehat Medical - Logo only.svg`}
+          href={'/assets/images/logo/Berkah Sehat Medical - Logo only.svg'}
           key="favicon"
         />
       </Head>
@@ -40,7 +36,6 @@ const Meta = (props: IMetaProps) => {
         }}
       />
     </>
-  );
-};
+);
 
 export { Meta };

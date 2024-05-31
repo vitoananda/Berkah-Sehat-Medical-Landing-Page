@@ -1,20 +1,20 @@
 {
   "..\\..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
-    "id": "..\\..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app",
+    "id": 9038,
     "files": [
-      "static/chunks/node_modules_next_dist_pages__app_js.js"
+      "static/chunks/38.0cf91c055198bcba.js"
     ]
   },
   "..\\..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
-    "id": "..\\..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error",
+    "id": 7655,
     "files": [
-      "static/chunks/node_modules_next_dist_pages__error_js.js"
+      "static/chunks/655.85d3abb7085ee35b.js"
     ]
   },
   "Products.tsx -> ../components/Modal": {
-    "id": "Products.tsx -> ../components/Modal",
+    "id": 3330,
     "files": [
-      "static/chunks/src_components_Modal_tsx.js"
+      "static/chunks/330.dc206f7f753ab1bc.js"
     ]
   }
 }

@@ -19,7 +19,3 @@ export interface Category {
 }
 
 // end category interface
-
-
-
-

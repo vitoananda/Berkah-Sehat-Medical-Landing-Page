@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Link from "next/link";
-import type { ReactNode } from "react";
+import Link from 'next/link';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 type INavbarProps = {
   logo: ReactNode;
@@ -26,14 +26,14 @@ const NavbarTwoColumns = (props: INavbarProps) => {
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
-          <div className={`icon ${menuOpen ? "open" : ""}`}>
+          <div className={`icon ${menuOpen ? 'open' : ''}`}>
             <span></span>
             <span></span>
             <span></span>
           </div>
         </button>
 
-        <nav className={`menu ${menuOpen ? "open" : ""}`}>
+        <nav className={`menu ${menuOpen ? 'open' : ''}`}>
           <ul className="navbar-menu flex items-center text-sm font-medium text-gray-800">
             {props.children}
           </ul>
